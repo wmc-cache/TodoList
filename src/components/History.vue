@@ -64,22 +64,11 @@ export default {
 
 
 <style>
-ol,
-ul {
-  list-style: none;
-}
 .textDecoration {
   text-decoration: line-through;
 }
 
 .el-table {
   margin: auto;
-}
-.el-table .warning-row {
-  background: oldlace;
-}
-
-.el-table .success-row {
-  background: #f0f9eb;
 }
 </style>
