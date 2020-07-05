@@ -5,7 +5,7 @@
 </template>
 
 <script>
-//状态提升 负责管理数据
+//状态提升 负责历史记录管理数据
 import axios from "axios";
 import History from "../components/History";
 export default {

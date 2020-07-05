@@ -13,7 +13,7 @@
 </template>
 
 <script>
-//状态提升 负责管理数据
+//状态提升 负责管理首页数据
 import axios from "axios";
 import Vue from "vue";
 import { Message } from "element-ui";

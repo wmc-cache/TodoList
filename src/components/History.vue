@@ -33,7 +33,7 @@
 </template>
 
 <script>
-//负责展示 从父组件获取数据
+//负责展示历史记录  从父组件获取数据
 import Vue from "vue";
 import formatTime from "../assets/formatTime";
 import { Table, TableColumn, Popover, Message, Button } from "element-ui";
