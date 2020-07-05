@@ -136,7 +136,7 @@ export default {
       });
     },
     reload() {
-      //vue使用key标记组件身份，当key改变时就是释放原始组件，重新加载新的组件。
+      //vue使用key(diff)标记组件身份，当key改变时就是释放原始组件，重新加载新的组件。
       axios
         .get("http://101.37.119.148:3000/lists")
         .then(res => ((this.list = res.data), this.key++));

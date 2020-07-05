@@ -5,6 +5,7 @@
 </template>
 
 <script>
+//状态提升 负责管理数据
 import axios from "axios";
 import History from "../components/History";
 export default {
@@ -16,6 +17,11 @@ export default {
   },
   components: {
     History
+  },
+  mounted() {
+    axios
+      .get("http://101.37.119.148:3000/histories")
+      .then(res => ((this.list = res.data.reverse()), console.log(this.list)));
   },
   methods: {
     regress(id) {
@@ -39,16 +45,11 @@ export default {
         .catch(err => console.log(err));
     },
     reload() {
-      //vue使用key标记组件身份，当key改变时就是释放原始组件，重新加载新的组件。
+      //vue使用key(diff)标记组件身份，当key改变时就是释放原始组件，重新加载新的组件。
       axios
         .get("http://101.37.119.148:3000/histories")
         .then(res => ((this.list = res.data.reverse()), this.key++));
     }
-  },
-  mounted() {
-    axios
-      .get("http://101.37.119.148:3000/histories")
-      .then(res => ((this.list = res.data.reverse()), console.log(this.list)));
   }
 };
 </script>
