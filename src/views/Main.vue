@@ -25,7 +25,16 @@ export default {
     AddInput,
     List
   },
-
+  //list=[
+  //     {
+  //         "completed": true,
+  //         "editing": false,
+  //         "id": "id-1593921559987",
+  //         "title": "打印简历",
+  //         "createdAt": "2020-07-05T03:59:05.582Z",
+  //         "updatedAt": "2020-07-05T03:59:05.582Z"
+  //     }
+  // ]
   data() {
     return {
       list: [],
@@ -50,6 +59,7 @@ export default {
             message: "待办任务添加成功",
             type: "success"
           });
+          //强制刷新
           this.reload();
         })
         .catch(err => console.log(err));

@@ -41,7 +41,7 @@
 
 
 <script>
-//负责展示 从父组件获取数据
+//负责展示首页 从父组件获取数据
 import Vue from "vue";
 import formatTime from "../assets/formatTime";
 import { Table, TableColumn, Popover, Message } from "element-ui";
@@ -67,11 +67,6 @@ export default {
   methods: {
     handleEdit(editing, id, index) {
       this.$emit("editItem", editing, id);
-      this.list.forEach(ele => {
-        if (ele._id === id) {
-          this.value = ele.title;
-        }
-      });
     },
 
     deleteItem(id) {
