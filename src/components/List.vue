@@ -64,6 +64,7 @@ export default {
       fn: formatTime
     };
   },
+
   methods: {
     handleEdit(editing, id, index) {
       this.$emit("editItem", editing, id);

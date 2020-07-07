@@ -25,16 +25,6 @@ export default {
     AddInput,
     List
   },
-  //list=[
-  //     {
-  //         "completed": true,
-  //         "editing": false,
-  //         "id": "id-1593921559987",
-  //         "title": "打印简历",
-  //         "createdAt": "2020-07-05T03:59:05.582Z",
-  //         "updatedAt": "2020-07-05T03:59:05.582Z"
-  //     }
-  // ]
   data() {
     return {
       list: [],
@@ -45,6 +35,17 @@ export default {
     axios
       .get("http://101.37.119.148:3000/lists")
       .then(res => (this.list = res.data));
+  },
+  beforeRouteLeave(to, from, next) {
+    if (this.$store.state.value !== "") {
+      Message({
+        showClose: true,
+        message: "当前输入框的值尚为提交",
+        type: "error"
+      });
+    } else {
+      next();
+    }
   },
   methods: {
     addItem(value) {
@@ -67,9 +68,7 @@ export default {
 
     deleteItem(id) {
       const item = this.list.filter(ele => ele._id === id)[0];
-
       const data = { ...item };
-      console.log(item, data);
 
       axios
         .post("http://101.37.119.148:3000/histories", data, {
@@ -88,8 +87,7 @@ export default {
         .catch(err => console.log(err));
     },
 
-    editItem(editing, id, value) {
-      this.key += 1;
+    editItem(editing, id) {
       this.list.forEach(ele => {
         if (ele._id === id) {
           axios

@@ -17,7 +17,7 @@
                 <span :class="{textDecoration:scope.row.completed}">{{ scope.row.title }}</span>
               </div>
               <div v-else>
-                <input :placeholder="scope.row.title" v-model="value" type="text" />
+                <input :placeholder="scope.row.title" type="text" />
               </div>
             </div>
           </el-popover>
