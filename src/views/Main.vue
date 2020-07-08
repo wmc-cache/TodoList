@@ -19,7 +19,7 @@ import Vue from "vue";
 import { Message } from "element-ui";
 import AddInput from "@/components/AddInput";
 import List from "@/components/List";
-
+import { getList, postList, deleteList, patchList } from "../api/list";
 export default {
   components: {
     AddInput,
@@ -32,9 +32,7 @@ export default {
     };
   },
   mounted() {
-    axios
-      .get("http://101.37.119.148:3000/lists")
-      .then(res => (this.list = res.data));
+    getList().then(res => (this.list = res.data));
   },
   beforeRouteLeave(to, from, next) {
     if (this.$store.state.value !== "") {
@@ -49,11 +47,7 @@ export default {
   },
   methods: {
     addItem(value) {
-      const data = { id: `id-${Date.now()}`, title: value };
-      axios
-        .post("http://101.37.119.148:3000/lists", data, {
-          headers: { "Content-Type": "application/json" }
-        })
+      postList({ id: `id-${Date.now()}`, title: value })
         .then(res => {
           Message({
             showClose: true,
@@ -77,31 +71,17 @@ export default {
         .then(res => {})
         .catch(err => console.log(err));
 
-      axios
-        .delete(`http://101.37.119.148:3000/lists/${id}`, {
-          headers: { "Content-Type": "application/json" }
-        })
-        .then(res => {
-          this.reload();
-        })
-        .catch(err => console.log(err));
+      deleteList(id).then(res => {
+        this.reload();
+      });
     },
 
     editItem(editing, id) {
       this.list.forEach(ele => {
         if (ele._id === id) {
-          axios
-            .patch(
-              `http://101.37.119.148:3000/lists/${id}`,
-              { editing: true },
-              {
-                headers: { "Content-Type": "application/json" }
-              }
-            )
-            .then(res => {
-              this.reload();
-            })
-            .catch(err => console.log(err));
+          patchList(id, { editing: true }).then(res => {
+            this.reload();
+          });
         }
       });
     },
@@ -109,18 +89,9 @@ export default {
     submit(id, title) {
       this.list.forEach(ele => {
         if (ele._id === id) {
-          axios
-            .patch(
-              `http://101.37.119.148:3000/lists/${id}`,
-              { title: title, editing: false },
-              {
-                headers: { "Content-Type": "application/json" }
-              }
-            )
-            .then(res => {
-              this.reload();
-            })
-            .catch(err => console.log(err));
+          patchList(id, { title: title, editing: false }).then(res => {
+            this.reload();
+          });
         }
       });
     },
@@ -128,18 +99,7 @@ export default {
     completed(id, completed) {
       this.list.forEach(ele => {
         if (ele._id === id) {
-          axios
-            .patch(
-              `http://101.37.119.148:3000/lists/${id}`,
-              { completed: !completed },
-              {
-                headers: { "Content-Type": "application/json" }
-              }
-            )
-            .then(res => {
-              this.reload();
-            })
-            .catch(err => console.log(err));
+          patchList(id, { completed: !completed });
         }
       });
     },

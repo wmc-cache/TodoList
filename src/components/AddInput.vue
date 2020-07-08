@@ -33,6 +33,7 @@ export default {
       if (this.inputValue.trim()) {
         this.$emit("addItem", this.inputValue);
         this.inputValue = "";
+        this.$store.commit("setValue", "");
       } else {
         Message({
           showClose: true,

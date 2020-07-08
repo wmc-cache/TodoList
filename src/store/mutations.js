@@ -1,7 +1,8 @@
 const mutations = {
   setValue(state, params) {
     state.value = params
-  }
+  },
+
 
 }
 
