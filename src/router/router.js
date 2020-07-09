@@ -2,12 +2,12 @@ export default
   [
     {
       path: "/",
-      name: "Main",
+      name: "main",
       component: () => import("../views/Main.vue"),
     },
     {
       path: "/history",
-      name: "Home",
+      name: "history",
       component: () => import("../views/History.vue")
     },
 
