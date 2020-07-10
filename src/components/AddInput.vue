@@ -1,12 +1,6 @@
 <template>
   <div class="container">
-    <el-input
-      class="input"
-      @input="input($event)"
-      v-model="inputValue"
-      clearable
-      placeholder="请输入内容"
-    ></el-input>
+    <el-input class="input" @input="input" v-model="inputValue" clearable placeholder="请输入内容"></el-input>
     <el-button @click="addItem" type="primary">添加</el-button>
   </div>
 </template>
@@ -24,7 +18,7 @@ export default {
   name: "AddInput",
   data() {
     return {
-      inputValue: ""
+      inputValue: this.$store.state.value
     };
   },
   computed: {},
@@ -33,7 +27,6 @@ export default {
       if (this.inputValue.trim()) {
         this.$emit("addItem", this.inputValue);
         this.inputValue = "";
-        this.$store.commit("setValue", "");
       } else {
         Message({
           showClose: true,
@@ -42,7 +35,7 @@ export default {
         });
       }
     },
-    input(event) {
+    input() {
       this.$store.commit("setValue", this.inputValue);
     }
   }

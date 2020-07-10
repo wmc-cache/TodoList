@@ -44,10 +44,12 @@ export default {
         distinguishCancelAndClose: true,
         confirmButtonText: "离开",
         cancelButtonText: "放弃修改"
-      }).then(() => {
-        this.$store.commit("setValue", "");
-        next();
-      });
+      })
+        .then(() => {
+          this.$store.commit("setValue", "");
+          next();
+        })
+        .catch(() => {});
     } else {
       next();
     }

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-table :data="this.list" style="width: 40%">
-      <el-table-column label="待办事项" width="380">
+    <el-table :data="this.list" style="width: 100%">
+      <el-table-column label="待办事项" style="width:50%">
         <template slot-scope="scope">
           <el-popover trigger="hover" placement="left">
             <p>createdAt:{{ fn(scope.row.createdAt) }}</p>
