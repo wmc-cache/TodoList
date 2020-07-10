@@ -3,7 +3,7 @@
     <el-table :data="this.list" style="width: 100%">
       <el-table-column label="历史事项" style="width:50%">
         <template slot-scope="scope">
-          <el-popover trigger="hover" placement="left">
+          <el-popover trigger="hover" placement="bottom">
             <p>createdAt:{{ fn(scope.row.createdAt) }}</p>
             <p>updatedAt:{{ fn(scope.row.updatedAt) }}</p>
             <p>目前内容:{{ scope.row.title }}</p>

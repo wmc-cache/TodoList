@@ -46,7 +46,6 @@ export default {
         cancelButtonText: "放弃修改"
       })
         .then(() => {
-          this.$store.commit("setValue", "");
           next();
         })
         .catch(() => {});
