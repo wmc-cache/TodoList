@@ -1,5 +1,6 @@
 import axios from "axios"
 import { baseURL } from "@/config"
+import { getToken } from '@/lib/util'
 class HttpRequest {
   constructor(baseUrl = baseURL) {
     console.log(baseURL)
@@ -22,6 +23,7 @@ class HttpRequest {
 
       }
       this.queue[url] = true
+      config.headers['Authorization'] = getToken()
       return config
     }, error => { return Promise.reject(error) })
 
