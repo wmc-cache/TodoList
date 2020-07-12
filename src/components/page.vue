@@ -1,6 +1,5 @@
 <style>
 .demo-tabs-style1 > .ivu-tabs-card > .ivu-tabs-content {
-  height: 5500px;
   margin-top: -16px;
 }
 
@@ -44,9 +43,7 @@
   <Row :gutter="32">
     <Col span="24" class="demo-tabs-style1" style="background: #e3e8ee;padding:16px;">
       <Tabs type="card">
-        <TabPane label="标签一">标签一的内容</TabPane>
-        <TabPane label="标签二">标签二的内容</TabPane>
-        <TabPane label="标签三">标签三的内容</TabPane>
+        <slot></slot>
       </Tabs>
     </Col>
   </Row>

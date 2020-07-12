@@ -1,7 +1,13 @@
 export default
   [
+
     {
       path: "/",
+      name: "home",
+      component: () => import("../views/Home.vue")
+    },
+    {
+      path: "/main",
       name: "main",
       component: () => import("../views/Main.vue"),
     },
@@ -10,20 +16,12 @@ export default
       name: "history",
       component: () => import("../views/History.vue")
     },
+
+
     {
-      path: "/login",
-      name: "login",
-      component: () => import("../views/Login.vue")
-    },
-    {
-      path: "/home",
-      name: "home",
-      component: () => import("../views/Home.vue")
-    },
-    {
-      path: "/page",
+      path: "/page/closure",
       name: "page",
-      component: () => import("../views/Page.vue")
+      component: () => import("../views/page/closure.vue")
     }
 
   ]

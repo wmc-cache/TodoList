@@ -25,7 +25,7 @@
         <Content :style="{margin: '88px 20px 0', background: '#fff', minHeight: '500px'}">
           <router-view />
         </Content>
-        <Footer class="layout-footer-center">2020 &copy; wumengcheng</Footer>
+        <Footer class="layout-footer-center">2020 &copy; 吴梦成</Footer>
       </Layout>
     </div>
   </div>
@@ -40,7 +40,7 @@ import Main from "./views/Main";
 export default {
   data() {
     return {
-      title: "wmc"
+      title: "wmc-cache"
     };
   },
   components: {
