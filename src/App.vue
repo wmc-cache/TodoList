@@ -16,9 +16,9 @@
               <MenuItem @click.native="handClick3" name="3">
                 <Icon type="ios-analytics"></Icon>历史记录
               </MenuItem>
-              <MenuItem @click.native="handClick4" name="4">
+              <!-- <MenuItem @click.native="handClick4" name="4">
                 <Icon type="ios-paper"></Icon>个人
-              </MenuItem>
+              </MenuItem>-->
             </div>
           </Menu>
         </Header>

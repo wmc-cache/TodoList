@@ -35,7 +35,7 @@
 <script>
 //负责展示历史记录  从父组件获取数据
 import Vue from "vue";
-import formatTime from "../assets/formatTime";
+import formatTime from "../../assets/formatTime";
 import { Table, TableColumn, Popover, Message, Button } from "element-ui";
 Vue.use(Table);
 Vue.use(TableColumn);

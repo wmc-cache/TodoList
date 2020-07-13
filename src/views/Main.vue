@@ -15,16 +15,14 @@
 <script>
 import Vue from "vue";
 import { Message, MessageBox } from "element-ui";
-import AddInput from "@/components/AddInput";
-import List from "@/components/List";
-import countTo from "../components/count-to";
+import AddInput from "../components/todolist/addInput";
+import List from "../components/todolist/list";
 import { getHistory, postHistory, deleteHistory } from "../api/history";
 import { getList, postList, deleteList, patchList } from "../api/list";
 export default {
   components: {
     AddInput,
-    List,
-    countTo
+    List
   },
   data() {
     return {
@@ -68,7 +66,6 @@ export default {
     deleteItem(id) {
       const item = this.list.filter(ele => ele._id === id)[0];
       const data = { ...item };
-
       postHistory(data);
       deleteList(id).then(res => {
         this.reload();

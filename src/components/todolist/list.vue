@@ -43,7 +43,7 @@
 <script>
 //负责展示首页 从父组件获取数据
 import Vue from "vue";
-import formatTime from "../assets/formatTime";
+import formatTime from "../../assets/formatTime";
 import { Table, TableColumn, Popover, Message } from "element-ui";
 Vue.use(Table);
 Vue.use(TableColumn);

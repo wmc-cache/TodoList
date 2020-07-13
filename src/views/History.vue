@@ -7,7 +7,7 @@
 <script>
 //状态提升 负责历史记录管理数据
 import axios from "axios";
-import History from "../components/History";
+import History from "../components/todolist/history";
 import { getHistory, deleteHistory } from "../api/history";
 import { getList, postList, deleteList, patchList } from "../api/list";
 export default {
