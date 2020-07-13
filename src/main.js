@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import iview from "iview"
 import 'view-design/dist/styles/iview.css';
+import "./globalComponents"
+
 
 Vue.config.productionTip = false
 Vue.use(iview)

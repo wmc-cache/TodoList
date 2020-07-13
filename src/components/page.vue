@@ -1,3 +1,22 @@
+<template>
+  <Row :gutter="32">
+    <Col span="24" class="demo-tabs-style1" style="background: #e3e8ee;padding:16px;">
+      <Tabs type="card">
+        <slot></slot>
+      </Tabs>
+    </Col>
+  </Row>
+</template>
+
+<script>
+import Vue from "vue";
+import { Backtop } from "element-ui";
+Vue.use(Backtop);
+
+export default {};
+</script>
+
+
 <style>
 .demo-tabs-style1 > .ivu-tabs-card > .ivu-tabs-content {
   margin-top: -16px;
@@ -39,15 +58,3 @@
   left: 0;
 }
 </style>
-<template>
-  <Row :gutter="32">
-    <Col span="24" class="demo-tabs-style1" style="background: #e3e8ee;padding:16px;">
-      <Tabs type="card">
-        <slot></slot>
-      </Tabs>
-    </Col>
-  </Row>
-</template>
-<script>
-export default {};
-</script>
