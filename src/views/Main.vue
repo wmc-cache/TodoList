@@ -15,8 +15,8 @@
 <script>
 import Vue from "vue";
 import { Message, MessageBox } from "element-ui";
-import AddInput from "../components/todolist/addInput";
-import List from "../components/todolist/list";
+import AddInput from "@c/todolist/addInput";
+import List from "@c/todolist/list";
 import { getHistory, postHistory, deleteHistory } from "../api/history";
 import { getList, postList, deleteList, patchList } from "../api/list";
 export default {
